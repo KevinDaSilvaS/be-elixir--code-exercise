@@ -1,6 +1,5 @@
 defmodule UserRepository do
   def fetch_users(%{search: nil, page: pg, itens_per_page: offset}) do
-    IO.inspect("No search")
     query = """
       SELECT name, salary
       FROM users
