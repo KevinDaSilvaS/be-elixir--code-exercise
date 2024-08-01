@@ -11,7 +11,8 @@ defmodule SampleApi.Application do
       SampleApiWeb.Telemetry,
       SampleApi.Repo,
       {DNSCluster, query: Application.get_env(:sample_api, :dns_cluster_query) || :ignore},
-      {Phoenix.PubSub, name: SampleApi.PubSub},
+      {Phoenix.PubSub, name: :mailer_pubsub},
+      MailerServer,
       # Start the Finch HTTP client for sending emails
       {Finch, name: SampleApi.Finch},
       # Start a worker by calling: SampleApi.Worker.start_link(arg)
