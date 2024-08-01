@@ -1,7 +1,7 @@
 import Config
 
 # Configure your database
-config :shitty_api, ShittyApi.Repo,
+config :sample_api, SampleApi.Repo,
   username: "user",
   password: "123",
   hostname: "postgres",
@@ -16,7 +16,7 @@ config :shitty_api, ShittyApi.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :shitty_api, ShittyApiWeb.Endpoint,
+config :sample_api, SampleApiWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {0, 0, 0, 0}, port: 4000],
@@ -25,8 +25,8 @@ config :shitty_api, ShittyApiWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "tA02Kd8K4rBoY69tGuPbDFuciL9SKDCMuNNlBxPkWoeorzuBQDMgUJ+tBKhW8J/l",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:shitty_api, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:shitty_api, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:sample_api, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:sample_api, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -53,17 +53,17 @@ config :shitty_api, ShittyApiWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :shitty_api, ShittyApiWeb.Endpoint,
+config :sample_api, SampleApiWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/shitty_api_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/sample_api_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :shitty_api, dev_routes: true
+config :sample_api, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

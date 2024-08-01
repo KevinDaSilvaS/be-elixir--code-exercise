@@ -1,12 +1,12 @@
-defmodule ShittyApiWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :shitty_api
+defmodule SampleApiWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :sample_api
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_shitty_api_key",
+    key: "_sample_api_key",
     signing_salt: "DQcIqAQ+",
     same_site: "Lax"
   ]
@@ -21,9 +21,9 @@ defmodule ShittyApiWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :shitty_api,
+    from: :sample_api,
     gzip: false,
-    only: ShittyApiWeb.static_paths()
+    only: SampleApiWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -31,7 +31,7 @@ defmodule ShittyApiWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :shitty_api
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :sample_api
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -49,5 +49,5 @@ defmodule ShittyApiWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug ShittyApiWeb.Router
+  plug SampleApiWeb.Router
 end

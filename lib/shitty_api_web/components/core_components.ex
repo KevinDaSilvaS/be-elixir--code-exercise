@@ -1,4 +1,4 @@
-defmodule ShittyApiWeb.CoreComponents do
+defmodule SampleApiWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule ShittyApiWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import ShittyApiWeb.Gettext
+  import SampleApiWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -661,9 +661,9 @@ defmodule ShittyApiWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(ShittyApiWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(SampleApiWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ShittyApiWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(SampleApiWeb.Gettext, "errors", msg, opts)
     end
   end
 

@@ -1,5 +1,5 @@
-defmodule ShittyApiWeb.UsersController do
-  use ShittyApiWeb, :controller
+defmodule SampleApiWeb.UsersController do
+  use SampleApiWeb, :controller
 
   def fetch_users(conn, params) do
     search_opts = Users.Validator.parse(params)

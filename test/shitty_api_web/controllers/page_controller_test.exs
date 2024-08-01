@@ -1,5 +1,5 @@
-defmodule ShittyApiWeb.PageControllerTest do
-  use ShittyApiWeb.ConnCase
+defmodule SampleApiWeb.PageControllerTest do
+  use SampleApiWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

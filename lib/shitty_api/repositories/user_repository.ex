@@ -8,7 +8,7 @@ defmodule UserRepository do
       OFFSET $2::integer;
       """
 
-    Ecto.Adapters.SQL.query!(ShittyApi.Repo, query, [offset, ((pg-1)*offset)])
+    Ecto.Adapters.SQL.query!(SampleApi.Repo, query, [offset, ((pg-1)*offset)])
     |> Map.get(:rows, [])
   end
 
@@ -21,7 +21,7 @@ defmodule UserRepository do
       OFFSET $3::integer;
       """
 
-    Ecto.Adapters.SQL.query!(ShittyApi.Repo, query, [srch, offset, ((pg-1)*offset)])
+    Ecto.Adapters.SQL.query!(SampleApi.Repo, query, [srch, offset, ((pg-1)*offset)])
     |> Map.get(:rows, [])
 
   end

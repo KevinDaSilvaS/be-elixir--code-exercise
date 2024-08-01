@@ -1,4 +1,4 @@
-defmodule ShittyApi.Repo.Migrations.CreateUsers do
+defmodule SampleApi.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def up do

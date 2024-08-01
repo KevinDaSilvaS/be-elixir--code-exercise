@@ -1,6 +1,6 @@
-defmodule ShittyApi do
+defmodule SampleApi do
   @moduledoc """
-  ShittyApi keeps the contexts that define your domain
+  SampleApi keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

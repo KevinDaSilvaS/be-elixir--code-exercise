@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :shitty_api,
-  ecto_repos: [ShittyApi.Repo],
+config :sample_api,
+  ecto_repos: [SampleApi.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :shitty_api, ShittyApiWeb.Endpoint,
+config :sample_api, SampleApiWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: ShittyApiWeb.ErrorHTML, json: ShittyApiWeb.ErrorJSON],
+    formats: [html: SampleApiWeb.ErrorHTML, json: SampleApiWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: ShittyApi.PubSub,
+  pubsub_server: SampleApi.PubSub,
   live_view: [signing_salt: "ZwixrhPy"]
 
 # Configures the mailer
@@ -29,12 +29,12 @@ config :shitty_api, ShittyApiWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :shitty_api, ShittyApi.Mailer, adapter: Swoosh.Adapters.Local
+config :sample_api, SampleApi.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  shitty_api: [
+  sample_api: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  shitty_api: [
+  sample_api: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

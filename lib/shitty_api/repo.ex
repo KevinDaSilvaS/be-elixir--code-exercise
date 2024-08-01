@@ -1,5 +1,5 @@
-defmodule ShittyApi.Repo do
+defmodule SampleApi.Repo do
   use Ecto.Repo,
-    otp_app: :shitty_api,
+    otp_app: :sample_api,
     adapter: Ecto.Adapters.Postgres
 end

@@ -1,12 +1,12 @@
-defmodule ShittyApiWeb do
+defmodule SampleApiWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use ShittyApiWeb, :controller
-      use ShittyApiWeb, :html
+      use SampleApiWeb, :controller
+      use SampleApiWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule ShittyApiWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: ShittyApiWeb.Layouts]
+        layouts: [html: SampleApiWeb.Layouts]
 
       import Plug.Conn
-      import ShittyApiWeb.Gettext
+      import SampleApiWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule ShittyApiWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {ShittyApiWeb.Layouts, :app}
+        layout: {SampleApiWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule ShittyApiWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import ShittyApiWeb.CoreComponents
-      import ShittyApiWeb.Gettext
+      import SampleApiWeb.CoreComponents
+      import SampleApiWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule ShittyApiWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: ShittyApiWeb.Endpoint,
-        router: ShittyApiWeb.Router,
-        statics: ShittyApiWeb.static_paths()
+        endpoint: SampleApiWeb.Endpoint,
+        router: SampleApiWeb.Router,
+        statics: SampleApiWeb.static_paths()
     end
   end
 

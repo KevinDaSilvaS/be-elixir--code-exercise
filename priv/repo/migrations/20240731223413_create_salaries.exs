@@ -1,4 +1,4 @@
-defmodule ShittyApi.Repo.Migrations.CreateSalaries do
+defmodule SampleApi.Repo.Migrations.CreateSalaries do
   use Ecto.Migration
 
   def up do

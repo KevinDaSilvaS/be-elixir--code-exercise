@@ -1,5 +1,5 @@
-defmodule ShittyApiWeb.PageController do
-  use ShittyApiWeb, :controller
+defmodule SampleApiWeb.PageController do
+  use SampleApiWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

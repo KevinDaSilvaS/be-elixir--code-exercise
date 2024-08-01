@@ -1,4 +1,4 @@
-# ShittyApi
+# SampleApi
 
 To start your Phoenix server:
 

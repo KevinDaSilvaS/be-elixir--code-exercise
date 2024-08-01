@@ -1,9 +1,9 @@
-defmodule ShittyApi.MixProject do
+defmodule SampleApi.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :shitty_api,
+      app: :sample_api,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule ShittyApi.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {ShittyApi.Application, []},
+      mod: {SampleApi.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -75,10 +75,10 @@ defmodule ShittyApi.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind shitty_api", "esbuild shitty_api"],
+      "assets.build": ["tailwind sample_api", "esbuild sample_api"],
       "assets.deploy": [
-        "tailwind shitty_api --minify",
-        "esbuild shitty_api --minify",
+        "tailwind sample_api --minify",
+        "esbuild sample_api --minify",
         "phx.digest"
       ]
     ]
