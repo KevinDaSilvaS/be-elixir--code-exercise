@@ -23,6 +23,18 @@ defmodule UserRepository do
 
     Ecto.Adapters.SQL.query!(SampleApi.Repo, query, [srch, offset, ((pg-1)*offset)])
     |> Map.get(:rows, [])
+  end
 
+  def get_active_users(offset, limit) do
+    query = """
+      SELECT name
+      FROM users
+      WHERE active = True
+      LIMIT $1::integer
+      OFFSET $2::integer;
+      """
+
+    Ecto.Adapters.SQL.query!(SampleApi.Repo, query, [limit, offset])
+    |> Map.get(:rows, [])
   end
 end
