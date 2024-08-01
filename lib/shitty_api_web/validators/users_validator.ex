@@ -1,6 +1,9 @@
 defmodule Users.Validator do
-  def validate(req_body) do
-    name = Map.has_key?(params, "name")
-    salary = Map.has_key?(params, "salary")
+  def parse(req_data) do
+    %{
+      search: Map.get(req_data, "search", nil),
+      page: Map.get(req_data, "page", "1") |> String.to_integer(),
+      itens_per_page: Map.get(req_data, "itens_per_page", "10") |> String.to_integer()
+    }
   end
 end
