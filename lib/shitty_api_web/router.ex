@@ -19,6 +19,7 @@ defmodule SampleApiWeb.Router do
 
     get "/", PageController, :home
     get "/users", UsersController, :fetch_users
+    post "/invite-users", UsersController, :mail_active_users
   end
 
   # Other scopes may use custom stacks.
