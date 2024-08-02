@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=123
+    ports: 
+      - "5432:5432"
+
+  adminer:
+    image: adminer
+    ports: 
+      - "8080:8080"
+
+  app:
+    image: app:1.0
+    command: >
+      sh -c "mix setup
+      && mix phx.server"
+    ports: 
+      - "4000:4000"
+    depends_on:
+      - postgres
