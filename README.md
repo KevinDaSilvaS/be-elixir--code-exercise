@@ -1,5 +1,9 @@
 # Solution
 
+# Warning
+- I didnt managed to make the seeder to run faster I got a metric of inserting the 20k users in around 40-50 minutes, so I recommend reducing the 20k to a lesser number(priv\repo\seeds.exs line 465)
+- I searched how to turn the benchmarks faster but I didnt foun anything applied to ecto, so any tips in performance improvement are welcome
+
 # Instalation
 
 To run the app we need to build the image and then after it run the docker-compose file:
@@ -59,9 +63,7 @@ INSERT INTO Salaries (salary, currency, user_id) VALUES (560045, 'USD', PREVIOUS
    - Meaning that the request batch to send emails was sent to the mailer and it will start processing the mail async
    - See the implementation: lib/app/mailer/mailer-server.ex
 
-# Warning
-I didnt managed to make the seeder to run faster I got a metric of inserting the 20k users in around 40-50 minutes, so I recommend reducing the 20k to a lesser number(priv\repo\seeds.exs line 465)
-I searched how to turn the benchmarks faster but I didnt foun anything applied to ecto, so any tips in performance improvement are welcome
+
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
