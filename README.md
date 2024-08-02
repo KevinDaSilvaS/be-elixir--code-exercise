@@ -47,7 +47,7 @@ INSERT INTO Salaries (salary, currency, user_id) VALUES (560045, 'USD', PREVIOUS
     ```
          [{"name":"Hudson Andrews","salary":3787},{"name":"Leo Andrews","salary":3056},{"name":"Lily Andrews","salary":7498}]
     ```
-  - See the implmentation: lib/app/users/user_service.ex
+  - See the implementation: lib/app/users/user_service.ex
 
 ### /invite-users POST
    - For this endpoint I used a GenServer and the Phoenix.PubSub to send batches of 10 users to the email sender at a time
@@ -57,7 +57,11 @@ INSERT INTO Salaries (salary, currency, user_id) VALUES (560045, 'USD', PREVIOUS
        {"ok":"Mail request sent successfully"}
      ```
    - Meaning that the request batch to send emails was sent to the mailer and it will start processing the mail async
-   - See the implmentation: lib/app/mailer/mailer-server.ex
+   - See the implementation: lib/app/mailer/mailer-server.ex
+
+# Warning
+I didnt managed to make the seeder to run faster I got a metric of inserting the 20k users in around 40-50 minutes, so I recommend reducing the 20k to a lesser number(priv\repo\seeds.exs line 465)
+I searched how to turn the benchmarks faster but I didnt foun anything applied to ecto, so any tips in performance improvement are welcome
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
