@@ -47,6 +47,17 @@ INSERT INTO Salaries (salary, currency, user_id) VALUES (560045, 'USD', PREVIOUS
     ```
          [{"name":"Hudson Andrews","salary":3787},{"name":"Leo Andrews","salary":3056},{"name":"Lily Andrews","salary":7498}]
     ```
+  - See the implmentation: lib/app/users/user_service.ex
+
+### /invite-users POST
+   - For this endpoint I used a GenServer and the Phoenix.PubSub to send batches of 10 users to the email sender at a time
+   - Sending small batches helps to not request too much from the database as well as not being blocked by the "email" provider 
+   - So the request comes as http://localhost:4000/invite-users and returns an:
+     ```
+       {"ok":"Mail request sent successfully"}
+     ```
+   - Meaning that the request batch to send emails was sent to the mailer and it will start processing the mail async
+   - See the implmentation: lib/app/mailer/mailer-server.ex
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
