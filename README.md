@@ -12,6 +12,7 @@
 ### My answer to it
   - There's no typical structure/patterns for a Phoenix application, some Elixir devs picked some shitty rails patterns and tried to force it into Elixir I came from a node.js background and I really believe rails is not the way software should be written(They still werent able to stop gluing their frontends into their backends, looks like a less shit PHP)
   - You mentioned that the test is for people who never used Elixir before, so how do you expect people to know th Ecto apis? I never used Ecto before because I only used Elixir with NoSQL because worrying about the ACID of a SQL is a waste of the concurrency power of Elixir, and second I used the raw SQL because I was dealing with fulltext search queries
+  - Again I never used Ecto before so I didnt even know a Ecto changesets existed
   - Perhaps, but I never worked with Phoenix.PubSub before and wanted to give it a try
   - I know some devs at Remote aren't the best at evaluating software but dont tell me you are blind as well, there's literally a migration just for creating the index(https://github.com/KevinDaSilvaS/be-elixir--code-exercise/blob/test-implementation/priv/repo/migrations/20240731223328_create_index_name_users.exs)
   - No way I'm adding test to a shitty api test app if you wanted tests you should have written it as a must, you dont know how to read software to find a migration, I wouldnt be surprised if you had some dificulties in writing as well
