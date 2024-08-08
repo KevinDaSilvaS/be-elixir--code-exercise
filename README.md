@@ -1,3 +1,25 @@
+# Those f#cking b@stards at Remote
+### They said that my solution could improve:
+
+- The solution does not respect the typical structure/patterns for a Phoenix application
+- Ecto APIs are not used to write migrations/queries, just raw queries sent to the lower-level SQL adapter;
+- Likewise, Ecto changesets were not used;
+- Using a GenServer to implement async email sending could have been ok, but Phoenix.PubSub is unnecessarily thrown into the mix;
+- Some claims in the solution documentation were not verified by looking at the actual code; for example, there is no GIN index on the `name` column of the `users` table;
+- No automated tests;
+- The candidate mentions "performance" a lot in the solution documentation, but doesn't back up any claim with numbers.
+
+### My answer to it
+  - There's no typical structure/patterns for a Phoenix application, some Elixir devs picked some shitty rails patterns and tried to force it into Elixir I came from a node.js background and I really believe rails is not the way software should be written(They still werent able to stop gluing their frontends into their backends, looks like a less shit PHP)
+  - You mentioned that the test is for people who never used Elixir before, so how do you expect people to know th Ecto apis? I never used Ecto before because I only used Elixir with NoSQL because worrying about the ACID of a SQL is a waste of the concurrency power of Elixir, and second I used the raw SQL because I was dealing with fulltext search queries
+  - Perhaps, but I never worked with Phoenix.PubSub before and wanted to give it a try
+  - I know some devs at Remote aren't the best at evaluating software but dont tell me you are blind as well, there's literally a migration just for creating the index(https://github.com/KevinDaSilvaS/be-elixir--code-exercise/blob/test-implementation/priv/repo/migrations/20240731223328_create_index_name_users.exs)
+  - No way I'm adding test to a shitty api test app if you wanted tests you should have written it as a must, you dont know how to read software to find a migration, I wouldnt be surprised if you had some dificulties in writing as well
+  - I mention it most about the database structure and I literally dont have to show numbers, for example when I added the last salary in the users table I wouldnt need to make a join operation, thats literally relational algebra if do less intersections you process less data and the query executes faster and the second one is when I mention I added a index to full text search the name instead of using LIKE operators in sql and there's an entire chapter in the postgres documentation dedicated to explain how it is faster: https://www.postgresql.org/docs/current/textsearch.html Do you guys really think you know more about postgres than the team who developed the database so you need to be proven with numbers?
+
+### My statements against Remote
+  - The dev teams sent me a existing Phoenix project that wasnt working, I spent four hours trying to make that shitty software work and at the end I created a new phoenix project from scratch and it ran at the first time, the problem is Remote all the time, unbelievable
+
 # Solution
 
 # Warning
